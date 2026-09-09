@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>abb0r</title>
+    <meta
+      name="description"
+      content="abb0r — small tools for Windows, Linux, macOS, and the browser. PiLoad, ezInstaDL, and other quiet utilities."
+    />
+    <meta name="theme-color" content="#f7f7f4" />
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Instrument+Sans:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise" aria-hidden="true"></div>
+    <header class="site-header">
+      <div class="wrap header-inner">
+        <a class="wordmark" href="#top">abb0r</a>
+        <nav>
+          <a href="#work">Work</a>
+          <a href="https://github.com/abb0r" target="_blank" rel="noopener noreferrer">
+            <svg viewBox="0 0 16 16" width="14" height="14" aria-hidden="true" fill="currentColor">
+              <path
+                d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+              />
+            </svg>
+            GitHub
+          </a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section id="top" class="hero wrap">
+        <p class="eyebrow reveal">Germany · 2026</p>
+        <h1 class="reveal d1">Tools I wanted to exist.</h1>
+        <p class="lead reveal d2">
+          Small utilities for Windows, Linux, macOS, and the browser. One job each. Published when they work.
+        </p>
+        <div class="hero-actions reveal d3">
+          <a class="btn btn-solid" href="#work">View work</a>
+          <a class="btn btn-ghost" href="https://github.com/abb0r" target="_blank" rel="noopener noreferrer">
+            GitHub
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path
+                d="M7 17 17 7m0 0H8m9 0v9"
+                stroke="currentColor"
+                stroke-width="1.75"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </a>
+        </div>
+      </section>
+
+      <section id="work" class="band">
+        <div class="wrap">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Selected work</p>
+              <h2>Projects</h2>
+            </div>
+            <p class="section-note">Public repositories on GitHub. Short notes, then the source.</p>
+          </div>
+
+          <article class="card">
+            <div class="card-grid">
+              <div class="card-copy">
+                <p class="meta"><span>01</span><i></i><span>Desktop · 2026</span></p>
+                <h3>PiLoad</h3>
+                <p>
+                  A desktop app that starts yt-dlp on a DietPi Raspberry Pi over SSH. Paste URLs on your computer; the
+                  Pi does the downloading.
+                </p>
+                <p class="muted">
+                  Available for Windows, Linux, and macOS. PiLoad talks to a Raspberry Pi over SSH and runs yt-dlp
+                  there, so large downloads live on the Pi instead of your machine. Paste one video URL per line, send,
+                  and the rest happens remotely.
+                </p>
+                <ul class="tags">
+                  <li>Go</li>
+                  <li>Windows</li>
+                  <li>Linux</li>
+                  <li>macOS</li>
+                </ul>
+                <a class="text-link" href="https://github.com/abb0r/piload" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17 17 7m0 0H8m9 0v9"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div class="card-visual">
+                <div class="window">
+                  <div class="window-bar">
+                    <span></span><span></span><span></span>
+                    <em>PiLoad</em>
+                  </div>
+                  <img
+                    src="https://raw.githubusercontent.com/abb0r/piload/main/docs/piload.png"
+                    alt="PiLoad desktop app with a queue of video URLs ready to send to a Raspberry Pi"
+                  />
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div class="card-grid">
+              <div class="card-copy">
+                <p class="meta"><span>02</span><i></i><span>Userscript · 2026</span></p>
+                <h3>ezInstaDL</h3>
+                <p>
+                  A Violentmonkey userscript that places discreet save buttons on Instagram photos, videos, carousels,
+                  Reels, and Stories.
+                </p>
+                <p class="muted">
+                  One click saves the visible item; carousels can be saved as a set. It runs entirely in the browser,
+                  prefers the full-size URL already loaded for your session, and stays out of the way.
+                </p>
+                <ul class="tags">
+                  <li>JavaScript</li>
+                  <li>Violentmonkey</li>
+                  <li>Tampermonkey</li>
+                </ul>
+                <a class="text-link" href="https://github.com/abb0r/ezInstaDL" target="_blank" rel="noopener noreferrer">
+                  View on GitHub
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path
+                      d="M7 17 17 7m0 0H8m9 0v9"
+                      stroke="currentColor"
+                      stroke-width="1.75"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                    />
+                  </svg>
+                </a>
+              </div>
+              <div class="card-visual">
+                <div class="window">
+                  <div class="window-bar window-bar-split">
+                    <div><span></span><span></span><span></span></div>
+                    <em>ezInstaDL</em>
+                  </div>
+                  <div class="media-grid">
+                    <div class="media-hero">
+                      <div class="save-cluster">
+                        <span class="save-btn light" aria-hidden="true">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M12 4v12m0 0-4-4m4 4 4-4M5 19h14"
+                              stroke="currentColor"
+                              stroke-width="1.75"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                        <span class="save-btn dark" aria-hidden="true">
+                          <svg width="12" height="12" viewBox="0 0 24 24" fill="none">
+                            <path
+                              d="M8 8h8v8H8zM12 4v4m0 8v4"
+                              stroke="currentColor"
+                              stroke-width="1.75"
+                              stroke-linecap="round"
+                            />
+                          </svg>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="swatch a"></div>
+                    <div class="swatch b"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section id="about" class="band">
+        <div class="wrap about">
+          <p class="eyebrow">About</p>
+          <div>
+            <h2>Just vibing around.</h2>
+            <p>
+              I’m abb0r, based in Germany. I write small programs when something in my own setup is missing — a download
+              that should live on a Pi, a save button that Instagram never shipped — then I put the source on GitHub.
+            </p>
+            <a class="text-link" href="https://github.com/abb0r" target="_blank" rel="noopener noreferrer">
+              github.com/abb0r
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path
+                  d="M7 17 17 7m0 0H8m9 0v9"
+                  stroke="currentColor"
+                  stroke-width="1.75"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="wrap footer-inner">
+        <p>© 2026 abb0r</p>
+        <p class="eyebrow">Germany</p>
+      </div>
+    </footer>
+  </body>
+</html>
