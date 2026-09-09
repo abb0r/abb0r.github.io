@@ -8,7 +8,7 @@
       name="description"
       content="abb0r — small tools for Windows, Linux, macOS, and the browser. PiLoad, ezInstaDL, and other quiet utilities."
     />
-    <meta name="theme-color" content="#f7f7f4" />
+    <meta name="theme-color" content="#14120b" />
     <meta property="og:title" content="abb0r" />
     <meta property="og:description" content="Small tools for Windows, Linux, macOS, and the browser." />
     <meta property="og:type" content="website" />
@@ -23,6 +23,17 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
+    <script>
+      (function () {
+        try {
+          if (localStorage.getItem("theme") === "light") {
+            document.documentElement.classList.add("light");
+            var m = document.querySelector('meta[name="theme-color"]');
+            if (m) m.setAttribute("content", "#f7f7f4");
+          }
+        } catch (e) {}
+      })();
+    </script>
   </head>
   <body>
     <div class="noise" aria-hidden="true"></div>
@@ -39,6 +50,18 @@
             </svg>
             GitHub
           </a>
+          <button
+            type="button"
+            class="theme-switch"
+            role="switch"
+            aria-checked="true"
+            aria-label="Dark mode"
+            id="theme-switch"
+          >
+            <span class="theme-switch-track">
+              <span class="theme-switch-thumb"></span>
+            </span>
+          </button>
         </nav>
       </div>
     </header>
@@ -230,5 +253,25 @@
         <p class="eyebrow">Germany</p>
       </div>
     </footer>
+    <script>
+      (function () {
+        var btn = document.getElementById("theme-switch");
+        if (!btn) return;
+        var meta = document.querySelector('meta[name="theme-color"]');
+        function sync() {
+          var light = document.documentElement.classList.contains("light");
+          btn.setAttribute("aria-checked", light ? "false" : "true");
+          if (meta) meta.setAttribute("content", light ? "#f7f7f4" : "#14120b");
+        }
+        sync();
+        btn.addEventListener("click", function () {
+          var light = document.documentElement.classList.toggle("light");
+          try {
+            localStorage.setItem("theme", light ? "light" : "dark");
+          } catch (e) {}
+          sync();
+        });
+      })();
+    </script>
   </body>
 </html>

@@ -1,4 +1,28 @@
 :root {
+  color-scheme: dark;
+  --canvas: #14120b;
+  --canvas-soft: #1a1812;
+  --ink: #edecec;
+  --body: #b8b5ad;
+  --muted: #8a877e;
+  --hairline: #2b2923;
+  --hairline-strong: #3f3c35;
+  --surface: #1b1913;
+  --shadow-ring: 0 0 0 1px rgba(237, 236, 236, 0.1);
+  --shadow-ring-hover: 0 0 0 1px rgba(237, 236, 236, 0.22);
+  --shadow-card: 0 0 0 1px rgba(237, 236, 236, 0.08);
+  --shadow-card-hover: 0 0 0 1px rgba(237, 236, 236, 0.16);
+  --shadow-window:
+    0 0 0 1px rgba(237, 236, 236, 0.08), 0 18px 40px -24px rgba(0, 0, 0, 0.7);
+  --noise-opacity: 0.08;
+  --noise-blend: overlay;
+  --font: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+html.light {
+  color-scheme: light;
   --canvas: #f7f7f4;
   --canvas-soft: #fafaf7;
   --ink: #26251e;
@@ -7,9 +31,14 @@
   --hairline: #e6e5e0;
   --hairline-strong: #cfcdc4;
   --surface: #fffcf8;
-  --font: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
-  --mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+  --shadow-ring: 0 0 0 1px rgba(38, 37, 30, 0.12);
+  --shadow-ring-hover: 0 0 0 1px rgba(38, 37, 30, 0.28);
+  --shadow-card: 0 0 0 1px rgba(38, 37, 30, 0.08);
+  --shadow-card-hover: 0 0 0 1px rgba(38, 37, 30, 0.16);
+  --shadow-window:
+    0 0 0 1px rgba(38, 37, 30, 0.08), 0 18px 40px -24px rgba(38, 37, 30, 0.28);
+  --noise-opacity: 0.045;
+  --noise-blend: multiply;
 }
 
 * {
@@ -64,9 +93,9 @@ p {
   pointer-events: none;
   position: fixed;
   inset: 0;
-  z-index: 40;
-  opacity: 0.045;
-  mix-blend-mode: multiply;
+  z-index: 10;
+  opacity: var(--noise-opacity);
+  mix-blend-mode: var(--noise-blend);
   background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0.15  0 0 0 0 0.14  0 0 0 0 0.12  0 0 0 0.55 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
 }
 
@@ -111,6 +140,44 @@ nav a {
 
 nav a:hover {
   color: var(--ink);
+}
+
+.theme-switch {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--ink);
+  cursor: pointer;
+}
+
+.theme-switch-track {
+  position: relative;
+  display: block;
+  width: 44px;
+  height: 24px;
+  border-radius: 999px;
+  background: var(--surface);
+  box-shadow: var(--shadow-ring);
+}
+
+.theme-switch-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 18px;
+  height: 18px;
+  border-radius: 999px;
+  background: var(--ink);
+  transition: transform 180ms var(--ease);
+}
+
+.theme-switch[aria-checked="true"] .theme-switch-thumb {
+  transform: translateX(20px);
 }
 
 .hero {
@@ -180,11 +247,11 @@ nav a:hover {
 
 .btn-ghost {
   color: var(--ink);
-  box-shadow: 0 0 0 1px rgba(38, 37, 30, 0.12);
+  box-shadow: var(--shadow-ring);
 }
 
 .btn-ghost:hover {
-  box-shadow: 0 0 0 1px rgba(38, 37, 30, 0.28);
+  box-shadow: var(--shadow-ring-hover);
 }
 
 .band {
@@ -232,12 +299,12 @@ nav a:hover {
   overflow: hidden;
   border-radius: 1rem;
   background: var(--surface);
-  box-shadow: 0 0 0 1px rgba(38, 37, 30, 0.08);
+  box-shadow: var(--shadow-card);
   transition: box-shadow 150ms ease-out;
 }
 
 .card:hover {
-  box-shadow: 0 0 0 1px rgba(38, 37, 30, 0.16);
+  box-shadow: var(--shadow-card-hover);
 }
 
 .card + .card {
@@ -316,7 +383,7 @@ nav a:hover {
   font-size: 11px;
   letter-spacing: 0.04em;
   color: var(--body);
-  box-shadow: 0 0 0 1px rgba(38, 37, 30, 0.1);
+  box-shadow: var(--shadow-ring);
 }
 
 .text-link {
@@ -357,9 +424,7 @@ nav a:hover {
   overflow: hidden;
   border-radius: 0.5rem;
   background: var(--canvas);
-  box-shadow:
-    0 0 0 1px rgba(38, 37, 30, 0.08),
-    0 18px 40px -24px rgba(38, 37, 30, 0.28);
+  box-shadow: var(--shadow-window);
 }
 
 .window-bar {
@@ -401,7 +466,7 @@ nav a:hover {
   height: 100%;
   object-fit: cover;
   object-position: top;
-  background: #1c1c1c;
+  background: var(--canvas-soft);
   flex: 1;
   min-height: 11rem;
 }
@@ -443,7 +508,7 @@ nav a:hover {
 .save-btn.light {
   background: color-mix(in srgb, var(--canvas) 90%, transparent);
   color: var(--ink);
-  box-shadow: 0 0 0 1px rgba(38, 37, 30, 0.08);
+  box-shadow: var(--shadow-card);
 }
 
 .save-btn.dark {
@@ -540,5 +605,8 @@ nav a:hover {
   }
   .btn:active {
     transform: none;
+  }
+  .theme-switch-thumb {
+    transition: none;
   }
 }
