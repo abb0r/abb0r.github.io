@@ -620,3 +620,39 @@ nav a:hover {
     transition: none;
   }
 }
+
+.chat-mock {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+  flex: 1;
+  min-height: 11rem;
+  padding: 1.35rem 1.15rem 1.2rem;
+  background: var(--canvas);
+}
+
+.rask-mark {
+  width: 28px;
+  height: 9px;
+  margin: 0.2rem 0 0.35rem 2px;
+  border-radius: 999px;
+  background: var(--ink);
+  transform: rotate(28deg);
+  transform-origin: center;
+}
+
+.chat-q,
+.chat-a {
+  margin: 0;
+  max-width: 28ch;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.chat-q {
+  color: var(--muted);
+}
+
+.chat-a {
+  color: var(--body);
+}
